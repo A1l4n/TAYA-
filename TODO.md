@@ -20,18 +20,18 @@ This file tracks all development todos for the TAYA ERP platform. Todos are also
 
 ## Phase 2: Database Schema - Core Multi-Tenant
 
-- 🔄 **create-organizations-table**: Create organizations table with slug, settings, and RLS policies
-- ⏳ **create-teams-table**: Create teams table with organization_id, manager_id, settings, and RLS policies
-- ⏳ **create-users-table**: Create users table with enhanced role system (super_admin, org_admin, senior_manager, manager, lead, member)
-- ⏳ **create-user-teams-table**: Create user_teams junction table supporting multiple managers (primary_manager, co_manager, lead, member) with reports_to field
-- ⏳ **create-management-hierarchy-table**: Create management_hierarchy table for managers managing managers with level tracking
-- ⏳ **create-spaces-table**: Create spaces table for buildings, floors, departments, rooms, desks, parking, equipment with hierarchy support
-- ⏳ **create-resource-allocations-table**: Create resource_allocations table for desk booking, room reservations with recurrence support
-- ⏳ **create-equipment-table**: Create equipment table for asset tracking with allocation support
-- ⏳ **create-permission-templates-table**: Create permission_templates table with granular permissions JSON structure
-- ⏳ **create-user-permissions-table**: Create user_permissions table for custom permission overrides and effective permission computation
+- ✅ **create-organizations-table**: Create organizations table with slug, settings, and RLS policies
+- ✅ **create-teams-table**: Create teams table with organization_id, manager_id, settings, and RLS policies
+- ✅ **create-users-table**: Create users table with enhanced role system (super_admin, org_admin, senior_manager, manager, lead, member)
+- ✅ **create-user-teams-table**: Create user_teams junction table supporting multiple managers (primary_manager, co_manager, lead, member) with reports_to field
+- ✅ **create-management-hierarchy-table**: Create management_hierarchy table for managers managing managers with level tracking
+- ✅ **create-spaces-table**: Create spaces table for buildings, floors, departments, rooms, desks, parking, equipment with hierarchy support
+- ✅ **create-resource-allocations-table**: Create resource_allocations table for desk booking, room reservations with recurrence support
+- ✅ **create-equipment-table**: Create equipment table for asset tracking with allocation support
+- ✅ **create-permission-templates-table**: Create permission_templates table with granular permissions JSON structure
+- ✅ **create-user-permissions-table**: Create user_permissions table for custom permission overrides and effective permission computation
 - ⏳ **migrate-existing-data**: Migrate existing team_members to new users table and create default organization/team
-- ⏳ **add-team-context**: Add team_id to daily_submissions, attendance_timesheet, scheduled_leaves tables and migrate data
+- ✅ **add-team-context**: Add team_id to daily_submissions, attendance_timesheet, scheduled_leaves tables and migrate data
 - ⏳ **create-rls-policies-core**: Create Row Level Security policies for organizations, teams, users, user_teams ensuring data isolation
 - ⏳ **create-hierarchy-rls**: Create RLS policies for management hierarchy ensuring proper access control
 - ⏳ **create-resource-rls**: Create RLS policies for resource management (spaces, allocations, equipment)
@@ -173,5 +173,5 @@ This file tracks all development todos for the TAYA ERP platform. Todos are also
 - Todos are tracked in both this file and the Cursor plan system
 - Update this file when completing todos
 - Dependencies are listed in the plan - work on todos in order
-- Last updated: 2025-01-15
+- Last updated: 2025-01-15 (Updated Phase 2 completion status)
 
