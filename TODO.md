@@ -30,7 +30,7 @@ This file tracks all development todos for the TAYA ERP platform. Todos are also
 - ✅ **create-equipment-table**: Create equipment table for asset tracking with allocation support
 - ✅ **create-permission-templates-table**: Create permission_templates table with granular permissions JSON structure
 - ✅ **create-user-permissions-table**: Create user_permissions table for custom permission overrides and effective permission computation
-- ⏳ **migrate-existing-data**: Migrate existing team_members to new users table and create default organization/team
+- ✅ **migrate-existing-data**: Migrate existing team_members to new users table and create default organization/team
 - ✅ **add-team-context**: Add team_id to daily_submissions, attendance_timesheet, scheduled_leaves tables and migrate data
 - ✅ **create-rls-policies-core**: Create Row Level Security policies for organizations, teams, users, user_teams ensuring data isolation
 - ✅ **create-hierarchy-rls**: Create RLS policies for management hierarchy ensuring proper access control
@@ -54,9 +54,9 @@ This file tracks all development todos for the TAYA ERP platform. Todos are also
 
 ## Phase 4: UI Components - Core Components
 
-- ⏳ **create-auth-form**: Create authentication form component with role-based routing
+- ✅ **create-auth-form**: Create authentication form component with role-based routing
 - ⏳ **create-user-profile**: Create user profile component with team/organization context
-- ⏳ **create-task-submission**: Create task submission component with team selection and team-aware submission
+- ✅ **create-task-submission**: Create task submission component with team selection and team-aware submission
 - ⏳ **create-team-status**: Create team status component filtered by current team with real-time updates
 - ⏳ **create-timesheet**: Create timesheet component with team filtering and manager view
 - ⏳ **create-leave-scheduler**: Create leave scheduler component with team context and approval workflow
