@@ -55,11 +55,11 @@ This file tracks all development todos for the TAYA ERP platform. Todos are also
 ## Phase 4: UI Components - Core Components
 
 - ✅ **create-auth-form**: Create authentication form component with role-based routing
-- ⏳ **create-user-profile**: Create user profile component with team/organization context
+- ✅ **create-user-profile**: Create user profile component with team/organization context
 - ✅ **create-task-submission**: Create task submission component with team selection and team-aware submission
 - ✅ **create-team-status**: Create team status component filtered by current team with real-time updates
-- ⏳ **create-timesheet**: Create timesheet component with team filtering and manager view
-- ⏳ **create-leave-scheduler**: Create leave scheduler component with team context and approval workflow
+- ✅ **create-timesheet**: Create timesheet component with team filtering and manager view
+- ✅ **create-leave-scheduler**: Create leave scheduler component with team context and approval workflow
 
 ---
 
@@ -173,5 +173,5 @@ This file tracks all development todos for the TAYA ERP platform. Todos are also
 - Todos are tracked in both this file and the Cursor plan system
 - Update this file when completing todos
 - Dependencies are listed in the plan - work on todos in order
-- Last updated: 2025-01-15 (Completed Phase 3: All service layer implementations complete)
+- Last updated: 2025-01-15 (Completed Phase 4: All core UI components implemented)
 
