@@ -2,8 +2,7 @@
 
 import { DashboardLayout } from '@/components/shared/DashboardLayout';
 import { ManagerDashboard } from '@/components/ManagerDashboard/Dashboard';
-import { TaskSubmission } from '@/components/shared/TaskSubmission';
-import { TeamStatus } from '@/components/shared/TeamStatus';
+import { TaskSubmission, TeamStatus, Timesheet, LeaveScheduler } from '@/components/shared';
 import { AuthService } from '@/lib/auth';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -47,6 +46,8 @@ export default function DashboardPage() {
 
   if (!user) return null;
 
+  const isManager = ['manager', 'senior_manager', 'org_admin', 'super_admin'].includes(user.role);
+
   return (
     <DashboardLayout
       userRole={user.role as any}
@@ -58,10 +59,23 @@ export default function DashboardPage() {
         
         {currentTeamId && (
           <>
+            {/* Task Submission & Team Status */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <TaskSubmission teamId={currentTeamId} />
               <TeamStatus teamId={currentTeamId} />
             </div>
+            
+            {/* Timesheet */}
+            <Timesheet 
+              teamId={currentTeamId} 
+              managerView={isManager}
+            />
+            
+            {/* Leave Scheduler */}
+            <LeaveScheduler 
+              teamId={currentTeamId} 
+              managerView={isManager}
+            />
           </>
         )}
       </div>
