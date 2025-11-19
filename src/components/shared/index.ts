@@ -12,7 +12,6 @@ export { Modal, type ModalProps } from './Modal';
 export { Badge, type BadgeProps } from './Badge';
 export { Sidebar, type SidebarProps } from './Sidebar';
 export { DashboardLayout, type DashboardLayoutProps } from './DashboardLayout';
-export { AuthForm } from './AuthForm';
 export { Tooltip, type TooltipProps } from './Tooltip';
 export { ToastContainer, ToastComponent, useToast, type Toast, type ToastType } from './Toast';
 export { Skeleton, SkeletonText, SkeletonCard, type SkeletonProps } from './Skeleton';
@@ -22,5 +21,4 @@ export { ProgressBar, type ProgressBarProps } from './ProgressBar';
 export { StatCard, type StatCardProps } from './StatCard';
 export { Avatar, type AvatarProps } from './Avatar';
 export { DataTable, type DataTableProps, type Column } from './DataTable';
-export { PermissionGuard } from './PermissionGuard';
 
