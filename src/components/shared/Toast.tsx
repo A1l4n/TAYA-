@@ -103,6 +103,7 @@ export function ToastContainer({ toasts, onRemove }: { toasts: Toast[]; onRemove
 let toastIdCounter = 0;
 const toastListeners: Array<(toasts: Toast[]) => void> = [];
 let toasts: Toast[] = [];
+const toastTimestamps = new Map<string, number>(); // Track when toasts were created
 
 function notifyListeners() {
   toastListeners.forEach((listener) => listener([...toasts]));
@@ -128,35 +129,48 @@ export function useToast() {
     const now = Date.now();
     const duplicateWindow = 2000; // 2 seconds
     
-    const isDuplicate = toasts.some((existingToast) => {
-      const timeDiff = now - parseInt(existingToast.id.split('-')[1] || '0', 10);
-      return (
-        existingToast.title === toast.title &&
-        existingToast.message === toast.message &&
-        existingToast.type === toast.type &&
-        timeDiff < duplicateWindow
-      );
-    });
-
-    if (isDuplicate) {
-      // Return existing toast ID instead of creating a new one
+    // Create a unique key for this toast
+    const toastKey = `${toast.type}-${toast.title}-${toast.message || ''}`;
+    
+    // Check if a similar toast was shown recently
+    const lastTimestamp = toastTimestamps.get(toastKey);
+    if (lastTimestamp && (now - lastTimestamp) < duplicateWindow) {
+      // Find and return the existing toast ID
       const existingToast = toasts.find(
         (t) =>
           t.title === toast.title &&
           t.message === toast.message &&
           t.type === toast.type
       );
-      return existingToast?.id || `toast-${++toastIdCounter}`;
+      if (existingToast) {
+        return existingToast.id;
+      }
     }
 
-    const id = `toast-${++toastIdCounter}-${now}`;
+    // Create new toast
+    const id = `toast-${++toastIdCounter}`;
     const newToast: Toast = { ...toast, id };
     toasts.push(newToast);
+    toastTimestamps.set(toastKey, now);
     notifyListeners();
+    
+    // Clean up old timestamps (older than duplicate window)
+    for (const [key, timestamp] of toastTimestamps.entries()) {
+      if (now - timestamp > duplicateWindow) {
+        toastTimestamps.delete(key);
+      }
+    }
+    
     return id;
   };
 
   const removeToast = (id: string) => {
+    const toast = toasts.find((t) => t.id === id);
+    if (toast) {
+      // Remove timestamp when toast is removed
+      const toastKey = `${toast.type}-${toast.title}-${toast.message || ''}`;
+      toastTimestamps.delete(toastKey);
+    }
     toasts = toasts.filter((t) => t.id !== id);
     notifyListeners();
   };
