@@ -37,8 +37,6 @@ export function AuthForm({ onSuccess }: AuthFormProps) {
         // Redirect based on role
         if (authUser.role === 'super_admin' || authUser.role === 'org_admin') {
           router.push('/dashboard/admin');
-        } else if (['senior_manager', 'manager'].includes(authUser.role)) {
-          router.push('/dashboard/manager');
         } else {
           router.push('/dashboard');
         }

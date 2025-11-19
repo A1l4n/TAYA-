@@ -6,6 +6,7 @@ export { TeamStatus, type TeamStatusProps } from './TeamStatus';
 export { UserProfile, type UserProfileProps } from './UserProfile';
 export { Timesheet, type TimesheetProps } from './Timesheet';
 export { LeaveScheduler, type LeaveSchedulerProps } from './LeaveScheduler';
+export { PermissionGuard } from './PermissionGuard';
 export { Input, type InputProps } from './Input';
 export { Modal, type ModalProps } from './Modal';
 export { Badge, type BadgeProps } from './Badge';
@@ -21,4 +22,5 @@ export { ProgressBar, type ProgressBarProps } from './ProgressBar';
 export { StatCard, type StatCardProps } from './StatCard';
 export { Avatar, type AvatarProps } from './Avatar';
 export { DataTable, type DataTableProps, type Column } from './DataTable';
+export { PermissionGuard } from './PermissionGuard';
 
